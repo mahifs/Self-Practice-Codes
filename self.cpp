@@ -24,24 +24,12 @@ int main()
         i++;
     }
 
-
-    // // 1. Copy key-value pairs from map to a vector
-    // std::vector<std::pair<std::string, int>> valueVector(originalMap.begin(), originalMap.end());
     vector<pair<string, int>> valueVector(mp.begin(), mp.end());
 
-    // // 2. Sort the vector using a lambda function comparing the values (pair.second)
-    // std::sort(valueVector.begin(), valueVector.end(), [](const auto& a, const auto& b) {
-    //     return a.second < b.second; // Ascending order
-    // });
     sort(valueVector.begin(), valueVector.end(), [](const auto& a, const auto& b){
         return a.second < b.second;
     });
 
-    // // 3. Print the sorted elements
-    // std::cout << "Sorted by value (Ascending):\n";
-    // for (const auto& pair : valueVector) {
-    //     std::cout << pair.first << ": " << pair.second << "\n";
-    // }
     for (const auto& pair : valueVector) {
         cout << pair.first << ": " << pair.second << endl;
     }
